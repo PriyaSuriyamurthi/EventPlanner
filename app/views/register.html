@@ -1,0 +1,46 @@
+<div class="mainDetail" ng-controller="registerCtrl">
+    <h3 class="centerHeader">Register</h3>
+    <br/>
+    <div class="row formDetails">
+        <form name="formregister" ng-submit="createUser()" novalidate>
+            <p class="errorMessage" ng-show="errorMsg"> {{errormessage}}</p>
+            <label for="name">
+                <span class="captionDet"> First Name </span> </label>
+            <br/>
+            <br/>
+            <input name="name" id="name" ng-model="name" type="text" placeholder="John" size="35" required/>
+            <p>
+                <span class="errorMessage" ng-show="formregister.name.$invalid && !formregister.name.$pristine">Required. </span>
+            </p>
+            <br/>
+            <br/>
+            <label for="email">
+                <span class="captionDet">Email</span> </label>
+            <br/>
+            <br/>
+            <input type="email" id="email" name="email" ng-model="email" placeholder="example@udacity.com" size="35" required/>
+            <p>
+                <span class="errorMessage" ng-show="formregister.email.$invalid && !formregister.email.$pristine"> Invalid email. </span>
+            </p>
+            <br/>
+            <br/>
+            <label for="password">
+                <span class="captionDet"> Password </span> </label>
+            <br/>
+            <br/>
+            <input name="password" id="password" ng-model="password" type="password" ng-maxlength="20" ng-minlength="8" size="35" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}" required/>
+            <p>
+                <span class="errorMessage" ng-show="
+                formregister.password.$error.maxlength || formregister.password.$error.minlength ">Password must be between 8 and 20 Characters.  </span>
+                <span class="errorMessage" ng-show=" formregister.password.$error.pattern &&
+                !formregister.password.$error.maxlength && !formregister.password.$error.minlength">Password must atleast have 1 Lower,uppercase,number & special character. </span>
+            </p>
+            <br/>
+            <br/>
+            <p><button class="btn btn-lg btn-success"  ng-disabled="formregister.$invalid" type="submit" >Register<span class="glyphicon glyphicon-ok"></span></button>
+            </p>
+        </form>
+        <p><a ui-sref="login">Already have an Account? SignIn here</a>
+        </p>
+    </div>
+</div>
