@@ -34,6 +34,11 @@ angular
       url:'/eventCreate',
       templateUrl:'views/eventCreate.html',
       controller:'EventcreateCtrl'
+    })
+    .state('eventView',{
+      url:'/eventView',
+      templateUrl:'views/eventView.html',
+      controller:'EventviewCtrl'
     });    
   }])
 
@@ -52,12 +57,14 @@ angular
  logout.addEventListener('click',function() {
  	firebase.auth().signOut();
  })
- 
+ var userid;
  firebase.auth().onAuthStateChanged(function(firebaseUser) {
  	if(firebaseUser)
  	{
- 		console.log("Logged in");
+    userid = firebaseUser.uid;
+ 		console.log("Logged in"+firebaseUser.uid);
  		eventHide.classList.remove('hide');
+    eventViewH.classList.remove('hide');
  		logout.classList.remove('hide');
  		login.classList.add('hide');
  		register.classList.add('hide');
@@ -67,6 +74,7 @@ angular
  	{
  		console.log('not logged in');
  		eventHide.classList.add('hide');
+    eventViewH.classList.add('hide');
  		logout.classList.add('hide');
  		login.classList.remove('hide');
  		register.classList.remove('hide');

@@ -8,7 +8,7 @@
  * Controller of the eventPlannerApp
  */
 angular.module('eventPlannerApp')
-  .controller('EventcreateCtrl',['$scope',function ($scope) {
+  .controller('EventcreateCtrl',['$scope','$state',function ($scope,$state) {
   	var vm= this;
   	vm.page = 1;
   	var today = new Date().toISOString().split('.')[0];	
@@ -28,7 +28,20 @@ angular.module('eventPlannerApp')
     		if(minutes.toString().length === 1){
     			minutes = "0"+minutes;
     		}
-    		start = start.getFullYear() + "-" + month + "-"+ start.getDate() +"T" +start.getHours() + ":" + minutes +":" + start.getSeconds();
+    		var hours = start.getHours();
+    		if(hours.toString().length === 1){
+    			hours = "0"+hours;
+    		}
+    		var seconds = start.getSeconds();
+    		if(seconds.toString().length === 1){
+    			seconds = "0"+seconds;
+    		}
+    		var dates = start.getDate();
+    		if(dates.toString().length === 1){
+    			dates = "0"+dates;
+    		}
+    		start = start.getFullYear() + "-" + month + "-"+ dates +"T" +hours + ":" + minutes +":" + seconds;
+    		console.log(start);
     		$('#endDate').attr('min',start);
     	}
     	if(typeof $scope.startDate !== 'undefined' &&  $scope.endDate !== null && typeof $scope.endDate !== 'undefined')
@@ -87,9 +100,9 @@ angular.module('eventPlannerApp')
     	{
         enHour=enHour;
     	}
-    	console.log(startdate);
-    	console.log(enddate);
-    	if((stHour+stMin > enHour+enMin) || (startdate > enddate))
+    	var sdate = new Date(startdate);
+    	var edate = new Date(enddate);
+    	if((((stHour > enHour)||((stHour === enHour) && (stMin > enMin))) && (enddate == startdate)) || (sdate > edate))
     	{
     		$scope.errorMsg = true;
 	        $scope.errormessage = "End Date/Time should be greater than Start Date/Time";
@@ -104,13 +117,18 @@ angular.module('eventPlannerApp')
     }
     $scope.addUser = function() {
     	console.log($scope.guestList);
-    	if($scope.guestList !== null && typeof $scope.guestList !== 'undefined')
+    	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    	
+    	if($scope.guestList !== null && typeof $scope.guestList !== 'undefined' && $scope.guestList.length > 0)
     	{
     		$scope.guestRep = [];
     		$scope.guestRep = $scope.guestList.replace(/\n/g, ",").split(/[ ,]+/);
     		for(var i=0;i<$scope.guestRep.length;i++)
     		{
+    			if(re.test($scope.guestRep[i]))
+    			{
     			$scope.guests.push($scope.guestRep[i]);
+    			}
     		}
     		$scope.guestList = "";
     	}
@@ -124,18 +142,20 @@ angular.module('eventPlannerApp')
     }
     $scope.addEvent = function() 
     {
-    	console.log($scope.startDate);
-    	console.log($scope.endDate);
-		var event ={
+    	var postsRef = ref.child(userid);
+    	var newpostref = postsRef.push();
+		newpostref.set({
+			
 			eventname: $scope.name,
 			eventtype: $scope.eventTyp,
 			orgname: $scope.orgname,
 			orgloc: $scope.orgLoc,
-			startdate: $scope.startDate,
-			enddate: $scope.endDate,
+			startdate: $scope.startDate.toString().split('GMT')[0],
+			enddate: $scope.endDate.toString().split('GMT')[0],
 			guestEmail: $scope.guests
-		}
-		ref.push(event);
-    	
+			
+		});
+		//ref.push().set(event);
+    	$state.go('eventView');
 	}
   }]);

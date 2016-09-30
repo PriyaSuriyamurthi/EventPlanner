@@ -8,7 +8,7 @@
     <h3 class="centerHeader">Event Create</h3>
     <br/>
     <div class="row">
-        <form name="formevent" novalidate autocomplete="on">
+        <form name="formevent" ng-submit="addEvent()" novalidate autocomplete="on">
         <div class="eventDetails">
             <p class="errorMessage" name="errormsg" ng-model="errormsg" ng-show="errorMsg"> {{errormessage}}</p>
             <div ng-show="vm.page===1">
@@ -115,7 +115,7 @@
     	</button>
     	<button type="button" class="btn" id="nextBtn" ng-show="vm.page< 3" ng-disabled="(vm.page === 1 && formevent.$error.required.length>3)||(vm.page === 2 && (formevent.$error.required.length>1 && formevent.$invalid) || errormessage.length > 0)" ng-click="vm.page=vm.page+1"> Next Section
     	</button> 
-        <button class="btn" ng-click="addEvent()" ng-disabled="guests.length ==0" ng-show="vm.page===3" type="submit">Create Event<span class="glyphicon glyphicon-ok"></span>
+        <button class="btn"  id="submitBtn" ng-disabled="guests.length ==0" ng-show="vm.page===3" type="submit">Create Event<span class="glyphicon glyphicon-ok"></span>
         </button>
     	</div>
     </form>
