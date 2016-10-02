@@ -13,8 +13,7 @@ angular.module('eventPlannerApp')
 			console.log("Login process...");
 			firebase.auth().signInWithEmailAndPassword($scope.email,$scope.password).
 			then(function(value)
-			{
-				console.log("hi");
+			{				
 				$state.go('eventCreate');
 			})
 			.catch(function(error){

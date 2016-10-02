@@ -41,7 +41,6 @@ angular.module('eventPlannerApp')
     			dates = "0"+dates;
     		}
     		start = start.getFullYear() + "-" + month + "-"+ dates +"T" +hours + ":" + minutes +":" + seconds;
-    		console.log(start);
     		$('#endDate').attr('min',start);
     	}
     	if(typeof $scope.startDate !== 'undefined' &&  $scope.endDate !== null && typeof $scope.endDate !== 'undefined')
@@ -116,7 +115,6 @@ angular.module('eventPlannerApp')
     	}
     }
     $scope.addUser = function() {
-    	console.log($scope.guestList);
     	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     	
     	if($scope.guestList !== null && typeof $scope.guestList !== 'undefined' && $scope.guestList.length > 0)
@@ -155,7 +153,6 @@ angular.module('eventPlannerApp')
 			guestEmail: $scope.guests
 			
 		});
-		//ref.push().set(event);
     	$state.go('eventView');
 	}
   }]);

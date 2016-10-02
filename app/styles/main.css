@@ -1,6 +1,4 @@
-body {
-  padding: 0;
-}
+
 
 /* Main marketing message and sign up button */
 .mainDetail {
@@ -12,10 +10,11 @@ body {
 }
 
 
-.mainDetail .btn {
+button {
   width: 150px;
   height:40px; 
   font-size: 14px;
+  color: #a94442;
 }
 
 .centerHeader {
@@ -27,7 +26,7 @@ body {
 }
 
 .formDetails {
-  padding-left: 10%;
+  padding-left: 30%;
   margin: 0 auto;
 }
 
@@ -67,6 +66,7 @@ input {
             font-weight: 400;
             color: #5cb85c;
             box-shadow: none !important;
+            width: 70%;
 }
 
 #guestEmail {
@@ -85,6 +85,8 @@ input {
   font-size: 1.2em;
   font-weight: normal;
   color:blue;
+  word-wrap: break-word;
+  margin-left: -20px;
 }
 
 .btnDetail {
@@ -93,17 +95,6 @@ input {
 }
 .btnDetail button {
   background-color: #5cb85c;
-}
-
-#prevBtn {
-  float:left;  
-}
-
-#nextBtn,
-#submitBtn {
-  float:right;
-  color:#a94442;
-  
 }
 
 .progress {
@@ -116,7 +107,7 @@ input {
   background: #5cb85c;
   border-radius: 25px;
   padding: 10px;
-  box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
 }
 .viewDetails {
   border: solid 2px #eee;
@@ -127,22 +118,77 @@ input {
   width: 45%;
   height: 50%;
   margin: 1px;  
-
 }
 
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus, 
+.navbar-inverse .navbar-brand {
+  color: white;
+}
+
+.viewDetails h1,
+.homeDetails h2 { 
+  color: #5cb85c;
+  font-family: FontAwesome;
+  }
+
+.homeDetails p {
+  font-family: FontAwesome;
+  font-size: 1.4em;
+  color: #a94442;
+}
+
+.viewDetails h3 { 
+  color: #a94442
+}
 .guestList {
   list-style: none;
-  list-style-image: url('images/mail.ico');
+  word-wrap: break-word;
+    margin-left: -20px;
 }
+
+  
+  
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
   }
+  
+  #prevBtn {
+  float:left;  
+  }
+  #nextBtn,
+  #submitBtn {
+  float:right;  
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  
 
   /* Remove the padding we set earlier */
   /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+  input {
+    width: 80%; 
+  }
+
+  button {    
+    font-size: 4px;
+  }
+
+  .formDetails {
+    padding-left: 0px;
+  }
+  
+  .viewDetails {
+    width: 85%;
+  }
+
+  
+
+  .EmailList {
+    width: 100%;
   }
 }

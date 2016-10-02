@@ -15,9 +15,7 @@ angular.module('eventPlannerApp')
     var fref = ref.child(userid);
     fref.on("child_added",function(snapshot){
     	var data = snapshot.val();  
-    	eventlist.push(data);	
-    	
-    	
+    	eventlist.push(data);	   	
     	})
     vm.event = eventlist;
 

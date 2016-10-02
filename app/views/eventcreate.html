@@ -1,3 +1,4 @@
+<body>
 <div class="mainDetail" ng-controller="EventcreateCtrl as vm">
 <div class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="70"
@@ -99,7 +100,7 @@
                 </div>
             </div>
             <div class="row" ng-show="vm.page===3">
-                <div class="col-md-12">
+                <div class="col-md-12 EmailList">
                     <h4 class="captionDet" ng-hide="guests.length == 0"> Guest Added </h4>
                     <ul>
                         <li class="guestAdd" ng-repeat="guest in guests">{{guest}} <span class="glyphicon glyphicon-minus" ng-click="removeUser(guest)"></span>
@@ -121,3 +122,4 @@
     </form>
 </div>
 </div>
+</body>
