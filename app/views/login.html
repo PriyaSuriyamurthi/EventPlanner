@@ -1,29 +1,37 @@
 <body>
-<div class="mainDetail" ng-controller="LoginCtrl">
-  <h3 class="centerHeader">Signin</h3><br/>
-     <div class="row formDetails" >
-      <form name="formlogin" ng-submit="loginUser()" novalidate autocomplete="on">  
-      <p class="errorMessage" ng-show="errorMsg"> {{errormessage}}</p>
-          <label for="email">
-          <span class="captionDet">Email</span> </label><br/><br/>
-          <input type="email" id="name" name="email" ng-model="email"
-          placeholder="example@udacity.com" size="35" 
-          required/>
-          <div>
-          <span class="errorMessage" ng-show="formlogin.email.$invalid && !formlogin.email.$pristine"> Invalid Email. </span> 
-          </div>
-          <br/><br/>
-          <label for="password">
-          <span class="captionDet"> Password </span>  </label><br/><br/>
-          <input name="password" id="password" ng-model="password" type="password" ng-maxlength="20" ng-minlength="8" size="35"
-          required/>
-          <div>
-          <span class="errorMessage" ng-show="formlogin.password.$invalid && !formlogin.password.$pristine">Required.</span> 
-          </div><br/><br/>
-          <p><button class="btn btn-lg btn-success"  ng-disabled="formlogin.$invalid"  type="submit"
-            >Login<span class="glyphicon glyphicon-ok"></span></button></p> 
-      </form>  
-          <p><a ui-sref="register">Doesn't have an Account? Register</a></p>
+    <div class="mainDetail" ng-controller="LoginCtrl">
+        <h3 class="centerHeader">Signin</h3>
+        <br/>
+        <div class="row formDetails">
+            <form name="formlogin" ng-submit="loginUser()" novalidate autocomplete="on">
+                <p class="errorMessage" ng-show="errorMsg"> {{errormessage}}</p>
+                <label for="email">
+                    <span class="captionDet">Email</span> </label>
+                <br/>
+                <br/>
+                <input type="email" id="name" name="email" ng-model="email" placeholder="example@udacity.com" size="35" required/>
+                <div>
+                    <span class="errorMessage" ng-show="formlogin.email.$invalid && !formlogin.email.$pristine"> Invalid Email. </span>
+                </div>
+                <br/>
+                <br/>
+                <label for="password">
+                    <span class="captionDet"> Password </span> </label>
+                <br/>
+                <br/>
+                <input name="password" id="password" ng-model="password" type="password" ng-maxlength="20" ng-minlength="8" size="35" required/>
+                <div>
+                    <span class="errorMessage" ng-show="formlogin.password.$invalid && !formlogin.password.$pristine">Required.</span>
+                </div>
+                <br/>
+                <br/>
+                <p>
+                    <button class="btn btn-lg btn-success" ng-disabled="formlogin.$invalid" type="submit">Login<span class="glyphicon glyphicon-ok"></span>
+                    </button>
+                </p>
+            </form>
+            <p><a ui-sref="register">Doesn't have an Account? Register</a>
+            </p>
+        </div>
     </div>
-</div>
 </body>

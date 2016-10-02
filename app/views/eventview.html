@@ -1,21 +1,21 @@
-<body >
-<div class="container eventDetail" ng-controller="EventviewCtrl as vm">
-<h1>List of Events</h1>
-<div class="row eventList">
-<div class="col-md-4 viewDetails" ng-repeat="eventlist in vm.event">
+<body>
+    <div class="container eventDetail" ng-controller="EventviewCtrl as vm">
+        <h1>List of Events</h1>
+        <div class="row eventList">
+            <div class="col-md-4 viewDetails" ng-repeat="eventlist in vm.event">
 
-<h3>{{eventlist.eventname}}</h3>
-<p><span class="glyphicon glyphicon-star"></span> {{eventlist.eventtype}}</p>
-<p><span class="glyphicon glyphicon-user"></span> {{eventlist.orgname}}</p>
-<p><span class="glyphicon glyphicon-map-marker"></span> {{eventlist.orgloc}}</p>
-<p><span class="glyphicon glyphicon-calendar"></span> {{eventlist.startdate}}</p>
-<p><span class="glyphicon glyphicon-calendar"></span> {{eventlist.enddate}}</p>
-<img src="../images/mail.jpg">Guest Email
-<ul class="guestList">
-<li  ng-repeat="guestemail in eventlist.guestEmail">{{guestemail}}</li>
-</ul>
-</div>
-<h3 ng-show="!vm.event.length">No Event created</h3>
-</div>
-</div>
+                <h3>{{eventlist.eventname}}</h3>
+                <p><span class="glyphicon glyphicon-star"></span> {{eventlist.eventtype}}</p>
+                <p><span class="glyphicon glyphicon-user"></span> {{eventlist.orgname}}</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span> {{eventlist.orgloc}}</p>
+                <p><span class="glyphicon glyphicon-calendar"></span> {{eventlist.startdate}}</p>
+                <p><span class="glyphicon glyphicon-calendar"></span> {{eventlist.enddate}}</p>
+                <img src="../images/mail.jpg">Guest Email
+                <ul class="guestList">
+                    <li ng-repeat="guestemail in eventlist.guestEmail">{{guestemail}}</li>
+                </ul>
+            </div>
+            <h3 ng-show="!vm.event.length">No Event created</h3>
+        </div>
+    </div>
 </body>

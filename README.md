@@ -1,13 +1,22 @@
-# event-planner
+# Event-planner
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
+This project is to create events for an user. The user needs to register to create and view the event.
+This project was designed using angularJS mvvm pattern. 
+Scaffolding tool : Yeoman
+Build : Grunt
+Package Manager: bower
+Database:  Firebase
 
 ## Build & development
+After cloning the repository you should run:
 
-Run `grunt` for building and `grunt serve` for preview.
+npm install
+
+bower install
 
 ## Testing
 
-Running `grunt test` will run the unit tests with karma.
-# EventPlanner
+Enter the command Grunt Serve to run the application local to the system.
+
+grunt serve
+
