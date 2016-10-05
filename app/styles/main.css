@@ -1,29 +1,42 @@
+body {
+    background: url(../images/eventplan.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
 /* Main marketing message and sign up button */
 .mainDetail {
     height: 60%;
     width: 70%;
     margin: 0 auto;
-    box-shadow: 3px 3px 32px rgba(0,0,0,.25);
     padding: 10px;
+    border: solid 2px #eee;
+    box-shadow: -1px 1px 13px 2px #dff0d8;
+    border-radius: 25px;
+    font-family: 'Seaweed Script', cursive;
+    background-color: #e9e9e9;
+    font-size: 1.6em;
 }
 
-button {
+.btn {
     width: 150px;
     height: 40px;
-    font-size: 14px;
-    color: #a94442;
+    font-size: 18px;
+    color: #ebebeb;
+}
+
+.headerImage {
+    max-width: 100%;
 }
 
 .centerHeader {
     text-align: center;
     padding-top: 5%;
-    font-family: 'Courgette', cursive;
-    color: #a94442;
-    font-size: 25px;
+    font-family: 'Seaweed Script', cursive;
+    color: #e86cab;
+    font-size: 28px;
 }
 
 .formDetails {
-    padding-left: 30%;
+    padding-left: 20%;
     margin: 0 auto;
 }
 
@@ -32,8 +45,8 @@ button {
     margin: 0 auto;
 }
 
-.eventDetails label {
-    color: #a94442;
+label {
+    color: #00bbbd;
 }
 
 .errorMessage {
@@ -41,8 +54,8 @@ button {
 }
 
 .captionDet {
-    font-family: 'Courgette', cursive;
-    font-size: 16px;
+    font-family: 'Seaweed Script', cursive;
+    font-size: 25px;
 }
 
 #logout {
@@ -60,7 +73,9 @@ input {
     border-right: transparent !important;
     border-bottom: 2px solid !important;
     font-weight: 400;
-    color: #5cb85c;
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 16px;
+    color: #d67baa;
     box-shadow: none !important;
     width: 70%;
 }
@@ -73,13 +88,13 @@ input {
 
 .guestAdd {
     list-style: none;
-    font-family: FontAwesome;
+    font-family: 'Seaweed Script', cursive;
     margin-right: 10px;
     display: block;
     vertical-align: middle;
     font-size: 1.2em;
     font-weight: normal;
-    color: blue;
+    color: #cc4972;
     word-wrap: break-word;
     margin-left: -20px;
 }
@@ -90,18 +105,19 @@ input {
 }
 
 .btnDetail button {
-    background-color: #5cb85c;
+    background-color: #00c7cd;
 }
 
 .progress {
-    margin-top: 20px;
     border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .progress-bar {
     height: 20px;
     position: relative;
-    background: #5cb85c;
+    background: #e86cab;
     border-radius: 25px;
     padding: 10px;
     box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
@@ -111,33 +127,50 @@ input {
     border: solid 2px #eee;
     box-shadow: -1px 1px 13px 2px #dff0d8;
     border-radius: 25px;
-    font-family: FontAwesome;
-    font-size: 1.2em;
+    font-family: 'Seaweed Script', cursive;
+    background-color: #e9e9e9;
+    font-size: 1.6em;
     width: 45%;
     height: 50%;
-    margin: 1px;
+    margin: 10px;
 }
 
-.navbar-inverse .navbar-brand:hover,
-.navbar-inverse .navbar-brand:focus, 
-.navbar-inverse .navbar-brand {
-    color: white;
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus, 
+.navbar .navbar-brand {
+    color: #00c1c5;
+    font-family: 'Seaweed Script', cursive;
+    font-size: 26px;
 }
 
-.viewDetails h1,
-.homeDetails h2 {
-    color: #5cb85c;
-    font-family: FontAwesome;
+.navbar .navbar-nav > li > a {
+    color: #e1599b;
+    font-family: 'Seaweed Script', cursive;
+    font-size: 22px;
+}
+
+.navbar .navbar-nav > li > a:hover,
+.navbar .navbar-nav > li > a:focus {
+    color: #f6e59f;
+}
+
+h1,
+h2,
+h3 {
+    color: #d1557f;
+    font-family: 'Seaweed Script', cursive;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 46px;
 }
 
 .homeDetails p {
-    font-family: FontAwesome;
-    font-size: 1.4em;
-    color: #a94442;
-}
-
-.viewDetails h3 {
-    color: #a94442;
+    font-family: 'Seaweed Script', cursive;
+    font-size: 2em;
+    color: #050505;
+    font-weight: 600;
 }
 
 .guestList {
@@ -146,13 +179,23 @@ input {
     margin-left: -20px;
 }
 
-  
-  
+.form-required:after {
+    content: "*";
+    color: red;
+    font-size: 20px;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, .5);
+    border-color: #138c83;
+}
+
+textarea {
+    width: 80%;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-    .container {
-        max-width: 730px;
-    }
+   
 
     #prevBtn {
         float: left;

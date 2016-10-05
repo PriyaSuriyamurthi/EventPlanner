@@ -5,7 +5,7 @@
         <div class="row formDetails">
             <form name="formregister" ng-submit="createUser()" novalidate>
                 <p class="errorMessage" ng-show="errorMsg"> {{errormessage}}</p>
-                <label for="name">
+                <label for="name" class="form-required" >
                     <span class="captionDet"> First Name </span> </label>
                 <br/>
                 <br/>
@@ -13,19 +13,15 @@
                 <p>
                     <span class="errorMessage" ng-show="formregister.name.$invalid && !formregister.name.$pristine">Required. </span>
                 </p>
-                <br/>
-                <br/>
-                <label for="email">
+                <label for="email" class="form-required" >
                     <span class="captionDet">Email</span> </label>
                 <br/>
                 <br/>
-                <input type="email" id="email" name="email" ng-model="email" placeholder="example@udacity.com" required/>
+                <input type="email" id="email" name="email" ng-model="email" placeholder="example@udacity.com"  required/>
                 <p>
                     <span class="errorMessage" ng-show="formregister.email.$invalid && !formregister.email.$pristine"> Invalid email. </span>
                 </p>
-                <br/>
-                <br/>
-                <label for="password">
+                <label for="password" class="form-required" >
                     <span class="captionDet"> Password </span> </label>
                 <br/>
                 <br/>
@@ -36,6 +32,25 @@
                     <span class="errorMessage" ng-show=" formregister.password.$error.pattern &&
                 !formregister.password.$error.maxlength && !formregister.password.$error.minlength">Password must atleast have 1 Lower,uppercase,number & special character. </span>
                 </p>
+                <label for="employer">
+                    <span class="captionDet"> Employer </span> </label>
+                <br/>
+                <br/>
+                <input name="employer" id="employer" ng-model="employer" placeholder="Udacity" type="text"/>
+                <br/>
+                <br/>
+                <label for="jobTitle">
+                    <span class="captionDet"> Job Title </span> </label>
+                <br/>
+                <br/>
+                <input name="jobTitle" id="jobTitle" ng-model="jobTitle" placeholder="Web Developer" type="text"/>
+                <br/>
+                <br/>
+                <label for="birthday">
+                    <span class="captionDet"> BirthDay </span> </label>
+                <br/>
+                <br/>
+                <input name="birthday" id="birthday" ng-model="birthday" type="date"/>
                 <br/>
                 <br/>
                 <p>

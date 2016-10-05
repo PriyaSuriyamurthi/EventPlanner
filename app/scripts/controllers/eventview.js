@@ -19,6 +19,5 @@
                 eventlist.push(data);
             });
             vm.event = eventlist;
-
         }]);
 })();

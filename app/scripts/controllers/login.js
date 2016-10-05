@@ -9,7 +9,8 @@
      * Controller of the eventPlannerApp
      */
     angular.module('eventPlannerApp')
-        .controller('LoginCtrl', ['$scope', '$state', function($scope, $state) {
+        .controller('LoginCtrl', ['$scope', '$state', function($scope, $state) {            
+            $('#email').focus();
             $scope.loginUser = function() {
                 console.log("Login process...");
                 firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).

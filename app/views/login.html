@@ -5,17 +5,17 @@
         <div class="row formDetails">
             <form name="formlogin" ng-submit="loginUser()" novalidate autocomplete="on">
                 <p class="errorMessage" ng-show="errorMsg"> {{errormessage}}</p>
-                <label for="email">
+                <label for="email" class="form-required">
                     <span class="captionDet">Email</span> </label>
                 <br/>
                 <br/>
-                <input type="email" id="name" name="email" ng-model="email" placeholder="example@udacity.com" size="35" required/>
+                <input type="email" id="email" name="email" ng-model="email" placeholder="example@udacity.com" size="35" required/>
                 <div>
                     <span class="errorMessage" ng-show="formlogin.email.$invalid && !formlogin.email.$pristine"> Invalid Email. </span>
                 </div>
                 <br/>
                 <br/>
-                <label for="password">
+                <label for="password" class="form-required">
                     <span class="captionDet"> Password </span> </label>
                 <br/>
                 <br/>

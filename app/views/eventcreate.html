@@ -12,7 +12,7 @@
                 <div class="eventDetails">
                     <p class="errorMessage" name="errormsg" ng-model="errormsg" ng-show="errorMsg"> {{errormessage}}</p>
                     <div ng-show="vm.page===1">
-                        <label for="name">
+                        <label for="name" class="form-required">
                             <span class="captionDet"> Event Name </span> </label>
                         <br/>
                         <br/>
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div ng-show="vm.page===1">
-                        <label for="eventTyp">
+                        <label for="eventTyp" class="form-required">
                             <span class="captionDet">Event Type</span> </label>
                         <br/>
                         <br/>
@@ -48,7 +48,7 @@
                     </div>
                     <div ng-show="vm.page===1">
 
-                        <label for="orgName">
+                        <label for="orgName" class="form-required">
                             <span class="captionDet"> Event Organizer </span> </label>
                         <br/>
                         <br/>
@@ -58,40 +58,49 @@
                         </div>
                     </div>
                     <div ng-show="vm.page===1">
-                        <label for="orgLoc">
+                        <label for="orgLoc" class="form-required">
                             <span class="captionDet"> Event Location </span> </label>
                         <br/>
                         <br/>
-                        <input id="orgloc" name="orgLoc" ng-model="orgLoc" type="text" placeholder="1234,East street" size="35" autocomplete="street-address" required/>
+                        <input id="orgLoc" name="orgLoc" ng-model="orgLoc" type="text" placeholder="1234,East street" size="35" autocomplete="street-address" required/>
                         <div>
                             <span class="errorMessage" ng-show="formevent.orgLoc.$invalid &&  !formevent.orgLoc.$pristine">Required. </span>
                         </div>
                     </div>
                     <div ng-show="vm.page===2">
-                        <label for="startDate">
+                        <label for="startDate" class="form-required">
                             <span class="captionDet"> Event Start Date </span> </label>
                         <br/>
                         <br/>
-                        <input type="datetime-local" name="startDate" id="startDate" size="32" ng-model="startDate" min="2016-09-27T15:11:16" ng-change="updateEndDate()" required/>
+                        <input type="datetime-local" name="startDate" id="startDate" size="32" ng-model="startDate" ng-change="updateEndDate()" required/>
                         <div>
                             <span class="errorMessage" ng-show="formevent.startDate.$invalid &&  !formevent.startDate.$pristine">Required. </span>
                         </div>
-                        <label for="endDate">
+                        <label for="endDate" class="form-required">
                             <span class="captionDet"> Event End Date </span> </label>
                         <br/>
                         <br/>
-                        <input type="datetime-local" id="endDate" name="endDate" size="32" ng-model="endDate" min="2016-09-26T15:11:16" ng-change="checkEndDate()" required/>
+                        <input type="datetime-local" id="endDate" name="endDate" size="32" ng-model="endDate" ng-change="checkEndDate()" required/>
                         <div>
-                            <span class="errorMessage" ng-show="formevent.endDate.$invalid &&  !formevent.endDate.$pristine">Required/Invalid. </span>
+                            <span class="errorMessage" ng-show="formevent.endDate.$invalid &&  !formevent.endDate.$pristine">Required. </span>
                         </div>
                     </div>
                     <div class="row" ng-show="vm.page===3">
                         <div class="col-md-12">
-                            <label for="guestList">
+                            <label for="description">
+                                <span class="captionDet"> Description </span> </label>
+                            <br/>
+                            <br/>
+                            <textarea id="description" name="description" ng-model="description" type="text" placeholder="Event Details" size="35" />
+                        </div>
+                    </div>
+                    <div class="row" ng-show="vm.page===3">
+                        <div class="col-md-12">
+                            <label for="guestList" class="form-required">
                                 <span class="captionDet"> Guest email </span> </label>
                             <br/>
                             <br/>
-                            <textarea id="guestEmail" name="guestList" ng-model="guestList" placeholder="guest@gmail.com" autocomplete="email" size="30" required/>
+                            <textarea id="guestList" name="guestList" ng-model="guestList" placeholder="guest@gmail.com" autocomplete="email" size="35" required/>
                             <span class="glyphicon glyphicon-plus" ng-click="addUser()"></span>
                             <div>
                                 <span class="errorMessage" ng-show="guests.length ==0 ">Required. </span>
@@ -107,6 +116,7 @@
                             </ul>
                         </div>
                     </div>
+
                 </div>
                 <br/>
                 <br/>
