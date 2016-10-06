@@ -17,16 +17,15 @@
             var ref = firebase.database().ref();
             var startTimestamp;
             var endTimestamp;
-            $('#name').focus();
+            $('#name').focus();   
             $scope.updateEndDate = function() {
 
                 startTimestamp = new Date($scope.startDate);
-
                 if (startTimestamp < today) {
                     $scope.errorMsg = true;
                     $scope.errormessage = "Start Date cannot be past";
-
-                } else {
+                } 
+                else {
                     $scope.errorMsg = false;
                     $scope.errormessage = "";
                 }
@@ -44,12 +43,14 @@
             $scope.checkEndDate = function() {
 
                 endTimestamp = new Date($scope.endDate);
-                if (startTimestamp && endTimestamp) {
-                    if (endTimestamp < startTimestamp) {
+                if (startTimestamp && endTimestamp && (startTimestamp >= today)) {
+                    if (endTimestamp <= startTimestamp) {
                         $scope.errorMsg = true;
                         $scope.errormessage = "End Date/time should be greater than start date/time";
-
-                    } else {
+                        
+                    } 
+                    else {
+                        
                         $scope.errorMsg = false;
                         $scope.errormessage = "";
                     }
@@ -64,15 +65,11 @@
                     $scope.errorMsg = false;
                     $scope.guestRep = $scope.guestList.replace(/\n/g, ",").split(/[ ,]+/);
                     for (var i = 0; i < $scope.guestRep.length; i++) {
-                        if (re.test($scope.guestRep[i])) {
-                            //$scope.errorMsg = false;
-                            //$scope.errormessage = "";
+                        if (re.test($scope.guestRep[i])) {                          
                             emailList.push($scope.guestRep[i]);
-                            //$scope.guests.push($scope.guestRep[i]);
-                            //$scope.guestList = "";
                         } else {
-                            $scope.errorMsg = true;
-                            $scope.errormessage = "Email invalid";
+                            $scope.errorDate = true;
+                            $scope.errorDateMsg = "Email invalid";
                             break;
                         }
                     }
