@@ -190,6 +190,20 @@ h1 {
     border-color: #138c83;
 }
 
+.modal-title {
+    font-size: 28px;
+    color: #e1599b;
+}
+
+.modalbtn, .btn:hover, .btn:focus, .btn.focus { 
+    color: white ;
+    background-color: #00c7cd;
+}
+
+.modal-body {
+    color: #00c7cd;
+}
+
 textarea {
     width: 80%;
 }

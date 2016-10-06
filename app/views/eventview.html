@@ -3,17 +3,37 @@
         <h1>List of Events</h1>
         <div class="row eventList">
             <div class="col-md-4 viewDetails" ng-repeat="eventlist in vm.event">
-
-                <h3>{{eventlist.eventname}}</h3>
-                <p><span class="glyphicon glyphicon-star"></span> {{eventlist.eventtype}}</p>
-                <p><span class="glyphicon glyphicon-user"></span> {{eventlist.orgname}}</p>
-                <p><span class="glyphicon glyphicon-map-marker"></span> {{eventlist.orgloc}}</p>
-                <p><span class="glyphicon glyphicon-calendar"></span> {{eventlist.startdate}}</p>
-                <p><span class="glyphicon glyphicon-calendar"></span> {{eventlist.enddate}}</p>
-                <img src="../images/mail.jpg">Guest Email
-                <ul class="guestList">
-                    <li ng-repeat="guestemail in eventlist.guestEmail">{{guestemail}}</li>
-                </ul>
+                <a data-toggle="modal" data-target="#myModal{{$id}}" ng-click="updateModal($index)">
+                    <h3>{{eventlist.eventname}} -  {{eventlist.eventtype}}</h3>
+                    <p class="hide">{{eventlist.eventtype}}</p>
+                </a>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal{{$id}}" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">{{eventlist.eventname}} </h4>
+                            </div>
+                            <div class="modal-body">
+                                <p><span class="glyphicon glyphicon-star"></span> {{eventtype}}</p>
+                                <p><span class="glyphicon glyphicon-user"></span> {{orgname}}</p>
+                                <p><span class="glyphicon glyphicon-map-marker"></span> {{orgloc}}</p>
+                                <p><span class="glyphicon glyphicon-calendar"></span> {{startdate}}</p>
+                                <p><span class="glyphicon glyphicon-calendar"></span> {{enddate}}</p>
+                                <p><span class="glyphicon glyphicon-ok-circle"></span> {{description}}</p>
+                                <img src="../images/mail.jpg">Guest Email
+                                <ul class="guestList">
+                                    <li ng-repeat="guestemail in guestEmail">{{guestemail}}</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn modalbtn" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <h3 ng-show="!vm.event.length">No Event created</h3>
         </div>

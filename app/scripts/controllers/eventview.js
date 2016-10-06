@@ -19,5 +19,15 @@
                 eventlist.push(data);
             });
             vm.event = eventlist;
+            $scope.updateModal = function(eventid) {
+
+                $scope.eventtype = vm.event[eventid].eventtype;
+                $scope.orgname = vm.event[eventid].orgname;
+                $scope.orgloc = vm.event[eventid].orgloc;
+                $scope.startdate = vm.event[eventid].startdate;
+                $scope.enddate = vm.event[eventid].enddate;
+                $scope.description = vm.event[eventid].description;
+                $scope.guestEmail = vm.event[eventid].guestEmail;
+            }
         }]);
 })();

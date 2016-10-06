@@ -44,10 +44,8 @@
                         <div>
                             <span class="errorMessage" ng-show="formevent.eventTyp.$invalid && !formevent.eventTyp.$pristine"> Required. </span>
                         </div>
-
                     </div>
                     <div ng-show="vm.page===1">
-
                         <label for="orgName" class="form-required">
                             <span class="captionDet"> Event Organizer </span> </label>
                         <br/>
@@ -91,7 +89,7 @@
                                 <span class="captionDet"> Description </span> </label>
                             <br/>
                             <br/>
-                            <textarea id="description" name="description" ng-model="description" type="text" placeholder="Event Details" size="35" />
+                            <textarea id="description" name="description" ng-model="description" placeholder="Birthday Details" size="35"></textarea>
                         </div>
                     </div>
                     <div class="row" ng-show="vm.page===3">
@@ -100,7 +98,7 @@
                                 <span class="captionDet"> Guest email </span> </label>
                             <br/>
                             <br/>
-                            <textarea id="guestList" name="guestList" ng-model="guestList" placeholder="guest@gmail.com" autocomplete="email" size="35" required/>
+                            <textarea id="guestList" name="guestList" ng-model="guestList" placeholder="guest@gmail.com" autocomplete="email" size="35" required></textarea>
                             <span class="glyphicon glyphicon-plus" ng-click="addUser()"></span>
                             <div>
                                 <span class="errorMessage" ng-show="guests.length ==0 ">Required. </span>
@@ -116,7 +114,6 @@
                             </ul>
                         </div>
                     </div>
-
                 </div>
                 <br/>
                 <br/>

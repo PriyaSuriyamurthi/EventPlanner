@@ -97,13 +97,13 @@
                 var postsRef = ref.child(userid);
                 var newpostref = postsRef.push();
                 newpostref.set({
-
                     eventname: $scope.name,
                     eventtype: $scope.eventTyp,
                     orgname: $scope.orgname,
                     orgloc: $scope.orgLoc,
                     startdate: $scope.startDate.toString().split('GMT')[0],
                     enddate: $scope.endDate.toString().split('GMT')[0],
+                    description: $scope.description,
                     guestEmail: $scope.guests
 
                 });
